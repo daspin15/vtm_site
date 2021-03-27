@@ -5,15 +5,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('home.html')
 
-@app.route('/mike')
-def mike():
-    return render_template('mike.html')
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
-@app.route('/vtm_site')
+@app.route('/estimate')
 def vtm_site():
-    return render_template('vtm_site.html')
+    return render_template('estimate.html')
 
 
 
