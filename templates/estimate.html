@@ -6,9 +6,20 @@
 {% block body %} 
 
 <h2>Create An Estimate</h2>
+<form action="/add" method="POST">
+    <label for="radius">
+        Radius:<input type="text" id="radius" name="radius" required autofocus />
+    </label>
+    <br><br>
+        <label for="height">
+            Height:<input type="text" id="height" name="height" required />
+        </label>
+    <br><br>
+    <input type="submit" value="Add">
 
-<body>
-    
-</body>
+</form>
+
+
+
 
 {% endblock %}
