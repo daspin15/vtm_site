@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template,request
+from flask import render_template, request
 
 app = Flask(__name__)
 
@@ -11,19 +11,18 @@ def index():
 def about():
     return render_template('about.html')
 
-@app.route('/estimate')
-def vtm_site():
+@app.route('/estimate', methods=['GET'])
+def estimate():
     return render_template('estimate.html')
 
-@app.route('/add')
+@app.route('/add',methods = ['POST'])
 def add():
     if request.method == 'POST':
-        radius = int(request.form['radius'])
+        radius= int(request.form['radius'])
         height = int(request.form['height'])
         mySum = radius + height
         print(mySum)
-
-    return render_template('estimate.html')
-
+    return render_template('estimate.html', myValue = mySum)
+    
 if __name__ == '__main__':
     app.run(debug=True)
