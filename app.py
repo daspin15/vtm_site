@@ -15,7 +15,13 @@ def about():
 def vtm_site():
     return render_template('estimate.html')
 
-
+@app.route('/add')
+def add():
+    if request.method == 'POST':
+        radius = request.form['radius']
+        height = request.form['height']
+        
+    return render_template('estimate.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
