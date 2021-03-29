@@ -20,7 +20,13 @@ def add():
     if request.method == 'POST':
         radius= int(request.form['radius'])
         height = int(request.form['height'])
-        mySum = radius + height
+        topArea = 3.14 * radius**2
+        sideArea = 2*(3.14*(radius* height))
+        totalArea_in = topArea + sideArea
+        totalArea_sq = totalArea_in / 144
+        materialCost = totalArea_sq * 25
+        laborCost = totalArea_sq * 15
+        mySum = materialCost + laborCost
         print(mySum)
     return render_template('estimate.html', myValue = mySum)
     
